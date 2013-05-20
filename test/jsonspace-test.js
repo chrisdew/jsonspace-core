@@ -7,7 +7,12 @@ describe('The example module', function() {
   });
   it('should create a JsonSpace', function() {
     var space = new js.JsonSpace();
-    assert('JsonSpace', space.constructor.name); 
+    assert.equal('JsonSpace', space.constructor.name); 
+  });
+  it('should insert an object', function() {
+    var space = new js.JsonSpace();
+    space.put({"hello": "world"});
+    assert.deepEqual([{"hello": "world"}], space.read());
   });
 });
 
