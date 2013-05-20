@@ -1,0 +1,33 @@
+{
+  "author": "Chris Dew <chris.dew@barricane.com>",
+  "name": "jsonspace-core",
+  "description": "NodeJS SKELeton project",
+  "version": "0.0.1",
+  "homepage": "",
+  "repository": {
+    "url": ""
+  },
+  "main": "lib/index.js",
+  "bin": {
+    "jsonspace-core": "./lib/index.js"
+  },
+  "scripts": {
+    "start": "node jsonspace-core.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "~1.7.0"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "~0.8.0"
+  },
+  "config": {
+    "repl": {
+      "port": 2323,
+      "host": "0.0.0.0"
+    }
+  }
+}
