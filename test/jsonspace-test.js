@@ -14,5 +14,21 @@ describe('The example module', function() {
     space.put({"hello": "world"});
     assert.deepEqual([{"hello": "world"}], space.read());
   });
+  it('should read with a function filter', function() {
+    var space = new js.JsonSpace();
+    space.put({"hello": "world"});
+    space.put({"foo": "bar"});
+    assert.deepEqual([{"hello": "world"}], space.read(function(ob) {
+      return ob.hello !== undefined; 
+    }));
+  });
+  it('should register a read function', function(done) {
+    var space = new js.JsonSpace();
+    space.on('put', function(ob) {
+      assert.deepEqual([{"hello": "world"}], space.read());
+      done();
+    }); 
+    space.put({"hello": "world"});
+  });
 });
 
